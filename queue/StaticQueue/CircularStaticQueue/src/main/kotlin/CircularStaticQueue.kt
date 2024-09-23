@@ -23,13 +23,13 @@ class CircularStaticQueue: CircularStaticQueueInterface {
     override fun print(): String{
         var result = "["
         var aux = head
-        for(i in 0..<quantity){
+        for(i in 0.. quantity - 1){
             if(i == quantity - 1 ){
-                result += "${aux % items.size}"
-
+                result += "${items[aux % items.size]}"
             } else {
-                result += "${aux % items.size}, "
+                result += "${items[aux % items.size]}, "
             }
+            aux++
         }
 
         return "$result]"

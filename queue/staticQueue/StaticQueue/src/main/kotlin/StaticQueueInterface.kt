@@ -9,4 +9,6 @@ interface StaticQueueInterface {
     fun isFull(): Boolean
     fun isEmpty(): Boolean
     fun print(): String
+    fun getTail(): Int
+    fun getHead(): Int
 }

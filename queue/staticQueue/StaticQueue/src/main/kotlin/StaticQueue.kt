@@ -70,4 +70,11 @@ class StaticQueue : StaticQueueInterface {
         }
     }
 
+    override fun getTail(): Int{
+        return tail
+    }
+
+    override fun getHead(): Int{
+        return head
+    }
 }

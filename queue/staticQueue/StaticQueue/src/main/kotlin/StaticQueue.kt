@@ -57,7 +57,7 @@ class StaticQueue : StaticQueueInterface {
         if(!isEmpty()){
             aux = items[head]
         } else {
-            prinln("Queue is empty!")
+            println("Queue is empty!")
         }
         return aux
     }

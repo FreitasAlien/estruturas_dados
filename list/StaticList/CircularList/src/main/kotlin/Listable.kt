@@ -1,5 +1,4 @@
 interface Listable {
-    interface Listable {
         //Main Methods
         fun append(item: Any?) // Adds an element to the end of the list
         fun insert(index: Int, item: Any?) // Inserts an element at the specified position
@@ -13,5 +12,4 @@ interface Listable {
         fun isFull(): Boolean // Checks if the list is full
         fun isEmpty(): Boolean // Checks if the list is empty
         fun print(): String // Prints the elements of the list
-    }
 }

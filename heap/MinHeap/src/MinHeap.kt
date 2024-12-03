@@ -86,13 +86,23 @@ class MinHeap(private val size: Int): Heapable {
         }
     }
 
+    override fun getRoot(): Long? { // Returns the root element
+        var root: Long? = null
+        if(!isEmpty()){
+            root = heapData[0]
+        } else {
+            throw NoSuchElementException("Heap is Empty!")
+        }
+        return root
+    }
+
     override fun extract(): Long? { // Removes the root element
         var root: Long? = null
         if(!isEmpty()){
-          root = heapData[0]
-          heapData[0] = heapData[end]
-          end--
-          heapifyDown(0)
+            root = heapData[0]
+            heapData[0] = heapData[end]
+            end--
+            heapifyDown(0)
         } else {
             throw NoSuchElementException("Heap is Empty!")
         }

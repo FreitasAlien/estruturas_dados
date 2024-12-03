@@ -13,5 +13,14 @@ class MinHeap(private val size: Int): Heapable {
         return (end == -1) // Returns 'true' if the heap is empty
     }
 
-
+    override fun printHeap(): String {
+        var result = "["
+        for(i in 0 .. end) {
+            result += "${heapData[i]}"
+            if (i != end) {
+                result += ","
+            }
+        }
+        return result
+    }
 }

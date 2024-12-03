@@ -5,8 +5,6 @@ interface Heapable {
     fun update(data: Long)          //U
     fun extract(): Long?            //D
 
-
-
     //Helper Methods
     fun isFull(): Boolean
     fun isEmpty(): Boolean

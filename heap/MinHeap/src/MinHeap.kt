@@ -37,6 +37,16 @@ class MinHeap(private val size: Int): Heapable {
         return leftChild(parentIndex) + 1 // Returns the index of the right child
     }
 
- ""
+    fun swap(i: Int, j: Int){
+        var temp = heapData[i]
+        heapData[i] = heapData[j]
+        heapData[j] = temp
+    }
+
+    fun healpifyUp(index: Int){
+        var indexChild = index
+        if(indexChild == 0) return
+    }
+
 
 }

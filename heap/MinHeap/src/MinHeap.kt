@@ -76,7 +76,7 @@ class MinHeap(private val size: Int): Heapable {
     }
 
     // Implementing Main Methods
-    override fun insert(data: Long){
+    override fun insert(data: Long) {
         if(!isFull()){
             end++
             heapData[end] = data

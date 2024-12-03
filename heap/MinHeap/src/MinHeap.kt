@@ -76,7 +76,7 @@ class MinHeap(private val size: Int): Heapable {
     }
 
     // Implementing Main Methods
-    override fun insert(data: Long) {
+    override fun insert(data: Long) { // Inserts a new element
         if(!isFull()){
             end++
             heapData[end] = data
@@ -84,6 +84,19 @@ class MinHeap(private val size: Int): Heapable {
         } else {
             throw NoSuchElementException("Heap is Full!")
         }
+    }
+
+    override fun extract(): Long? { // Removes the root element
+        var root: Long? = null
+        if(!isEmpty()){
+          root = heapData[0]
+          heapData[0] = heapData[end]
+          end--
+          heapifyDown(0)
+        } else {
+            throw NoSuchElementException("Heap is Empty!")
+        }
+        return root // Returns the root element
     }
 
 

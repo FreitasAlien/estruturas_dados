@@ -55,5 +55,26 @@ class MinHeap(private val size: Int): Heapable {
         }
     }
 
+    fun heapifyDown(index: Int){
+        val parent = index
+        val leftChild = leftChild(parent)
+        val rightChild = rightChild(parent)
+        var smaller = parent
+
+        if(leftChild <= end)
+            if(heapData[leftChild] < heapData[smaller])
+                smaller = leftChild
+
+        if(rightChild <= end)
+            if(heapData[rightChild] < heapData[smaller])
+                smaller = rightChild
+
+        if(smaller != parent){
+            swap(parent, smaller)
+            heapifyDown(smaller)
+        }
+    }
+
+
 
 }

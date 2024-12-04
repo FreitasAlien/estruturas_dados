@@ -21,7 +21,7 @@ class MinHeap(private val size: Int): Heapable {
                 result += ","
             }
         }
-        return result
+        return "$result]"
     }
 
     // Utility Methods
@@ -49,7 +49,7 @@ class MinHeap(private val size: Int): Heapable {
         if(indexChild == 0) return
 
         val indexParent = parent(indexChild)
-        if(heapData[indexChild] > heapData[indexParent]){
+        if(heapData[indexChild] < heapData[indexParent]){
             swap(indexParent, indexChild)
             heapifyUp(indexParent)
         }

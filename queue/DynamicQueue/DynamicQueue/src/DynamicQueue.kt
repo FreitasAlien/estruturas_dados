@@ -42,7 +42,11 @@ class DynamicQueue(private val size: Int): Queueable {
     }
 
     override fun update(item: Any?){
-
+        if(!isEmpty()){
+            head?.data = item
+        } else {
+            throw NoSuchElementException("Queue is empty!")
+        }
     }
 
     override fun dequeue(): Any?{

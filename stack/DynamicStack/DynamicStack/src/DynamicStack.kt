@@ -62,4 +62,12 @@ class DynamicStack(var size: Int): Stackable{
         return aux
     }
 
+    override fun update(item: Any?){
+        if(!isEmpty()){
+            topPointer?.data = item
+        } else {
+            throw NoSuchElementException("Stack is empty!")
+        }
+    }
+
 }

@@ -26,5 +26,23 @@ class DynamicQueue(private val size: Int): Queueable {
         return "$result]"
     }
 
+    // Implementing Main Methods
+    override fun enqueue(item: Any?){
+
+    }
+
+    override fun front(): Any?{
+
+    }
+
+    override fun update(): Any?{
+
+    }
+
+    override fun dequeue(): Any?{
+
+    }
+
+
 
 }

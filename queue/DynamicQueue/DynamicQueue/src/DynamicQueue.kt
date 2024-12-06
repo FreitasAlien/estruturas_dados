@@ -5,11 +5,11 @@ class DynamicQueue(private val size: Int): Queueable {
 
     // Implementing Helper Methods
     override fun isEmpty(): Boolean{
-
+        return (quantity == 0)
     }
 
     override fun isFull(): Boolean{
-
+        return (quantity == size)
     }
 
     override fun print(): String{

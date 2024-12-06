@@ -2,7 +2,7 @@ interface Queueable {
     // Main Methods
     fun enqueue(item: Any?)     //C
     fun front(): Any?           //R
-    fun update(): Any?          //U
+    fun update(item: Any?)      //U
     fun dequeue(): Any?         //D
 
     // Helper Methods

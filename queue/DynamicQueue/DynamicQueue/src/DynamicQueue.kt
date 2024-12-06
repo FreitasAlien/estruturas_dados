@@ -41,7 +41,7 @@ class DynamicQueue(private val size: Int): Queueable {
         return aux
     }
 
-    override fun update(): Any?{
+    override fun update(item: Any?){
 
     }
 

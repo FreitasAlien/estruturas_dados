@@ -21,7 +21,7 @@ class DynamicQueue(private val size: Int): Queueable {
             if(i == quantity - 1)
                 result += ","
 
-            aux = aux?.previous
+            aux = aux?.next
         }
         return "$result]"
     }

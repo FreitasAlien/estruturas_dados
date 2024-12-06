@@ -29,7 +29,7 @@ class DynamicStack(var size: Int): Stackable{
         if(!isFull()){
             var nodeTemp = Node(item)
             nodeTemp.previous = topPointer
-            if(isEmpty())
+            if(!isEmpty())
                 topPointer?.next = nodeTemp
             topPointer = nodeTemp
             quantity++

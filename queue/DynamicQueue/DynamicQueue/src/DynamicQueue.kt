@@ -32,7 +32,13 @@ class DynamicQueue(private val size: Int): Queueable {
     }
 
     override fun front(): Any?{
-
+        var aux: Any? = null
+        if(!isEmpty()){
+            aux = head?.data
+        } else {
+            throw NoSuchElementException("Queue is empty!")
+        }
+        return aux
     }
 
     override fun update(): Any?{

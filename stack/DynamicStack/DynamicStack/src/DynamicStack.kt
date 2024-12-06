@@ -24,4 +24,19 @@ class DynamicStack(var size: Int): Stackable{
         return "$result]"
     }
 
+    // Implementing Main Methods
+    override fun push(item: Any?){
+        if(!isFull()){
+            var nodeTemp = Node(item)
+            nodeTemp.previous = topPointer
+            if(isEmpty())
+                topPointer?.next = nodeTemp
+            topPointer = nodeTemp
+            quantity++
+        } else {
+            throw NoSuchElementException("Stack is full!")
+        }
+    }
+
+
 }

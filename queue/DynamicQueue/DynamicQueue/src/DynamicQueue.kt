@@ -50,7 +50,19 @@ class DynamicQueue(private val size: Int): Queueable {
     }
 
     override fun dequeue(): Any?{
-
+        var aux: Any? = null
+        if(!isEmpty()){
+            aux = head?.data
+            head = head?.next
+            quantity--
+            if(!isEmpty())
+                head?.previous = null
+            else
+                tail = null
+        } else {
+            throw NoSuchElementException("Queue is empty!")
+        }
+        return aux
     }
 
 

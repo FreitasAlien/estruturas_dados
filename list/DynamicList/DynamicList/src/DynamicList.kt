@@ -100,7 +100,9 @@ class DynamicList(private var size: Int): Listable {
     }
 
     override fun clear(){
-
+        head = null
+        tail = null
+        quantity = 0
     }
 
 

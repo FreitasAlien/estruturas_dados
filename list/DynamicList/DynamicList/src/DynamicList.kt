@@ -66,7 +66,17 @@ class DynamicList(private var size: Int): Listable {
     }
 
     override fun getAll(): Array<Any?>{
-
+        var arrayAux: Array<Any?> = arrayOfNulls(size)
+        if(!isEmpty()){
+            var auxPointer = head
+            for(i in 0 until quantity){
+                arrayAux[i] = auxPointer?.data
+                auxPointer = auxPointer?.next
+            }
+        } else {
+            throw NoSuchElementException("List is empty!")
+        }
+        return arrayAux
     }
 
     override fun update(index: Int, item: Any?){

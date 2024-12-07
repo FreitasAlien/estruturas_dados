@@ -13,7 +13,17 @@ class DynamicList(private var size: Int): Listable {
     }
 
     override fun print(): String{
+        var result = "["
+        var auxPointer = head
+        for(i in 0 until quantity){
+            result += "${auxPointer?.data}"
 
+            if(i != quantity - 1)
+                result += ","
+
+        auxPointer = auxPointer?.next
+        }
+        return "$result]"
     }
 
 }

@@ -18,7 +18,7 @@ class DynamicQueue(private val size: Int): Queueable {
         for(i in 0 until quantity){
             result += "${aux?.data}"
 
-            if(i == quantity - 1)
+            if(i != quantity - 1)
                 result += ","
 
             aux = aux?.next

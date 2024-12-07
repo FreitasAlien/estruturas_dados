@@ -80,7 +80,19 @@ class DynamicList(private var size: Int): Listable {
     }
 
     override fun update(index: Int, item: Any?){
-
+        if(!isEmpty()){
+            if(index >= 0 && index < quantity){
+                var auxPointer = head
+                for(i in 0 until index){
+                    auxPointer = auxPointer?.next
+                }
+                auxPointer?.data = item
+            } else {
+                throw NoSuchElementException("Invalid Index!")
+            }
+        } else {
+            throw NoSuchElementException("List is empty!")
+        }
     }
 
     override fun delete(index: Int): Any?{

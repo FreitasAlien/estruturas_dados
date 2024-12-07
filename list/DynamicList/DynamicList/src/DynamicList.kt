@@ -44,7 +44,39 @@ class DynamicList(private var size: Int): Listable {
     }
 
     override fun insert(index: Int, item: Any?){
+        if(!isFull()){
+            if(index >= 0 && index <= quantity){
+                var nodeTemp = Node(item)
 
+                var previousPointer: Node? = null
+                var nextPointer = head
+
+                for(i in 0 until index){
+                    previousPointer = nextPointer
+                    nextPointer = nextPointer?.next
+                }
+
+                if(previousPointer != null){
+                    previousPointer.next = nodeTemp
+                } else {
+                    head = nodeTemp
+                }
+
+                if(nextPointer != null){
+                    nextPointer.previous = nodeTemp
+                } else {
+                    tail = nodeTemp
+                }
+
+                nodeTemp.previous = previousPointer
+                nodeTemp.next = nextPointer
+                quantity++
+            } else {
+                throw IndexOutOfBoundsException("Invalid Index!")
+            }
+        } else {
+            throw NoSuchElementException("List is full!")
+        }
     }
 
     override fun get(index: Int): Any?{

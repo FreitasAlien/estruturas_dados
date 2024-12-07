@@ -128,7 +128,35 @@ class DynamicList(private var size: Int): Listable {
     }
 
     override fun delete(index: Int): Any?{
+        var aux: Any? = null
+        if (!isEmpty()) {
+            if (index >= 0 && index < quantity) {
 
+                var auxPointer  = head
+                for (i in 0 until index)
+                    auxPointer = auxPointer?.next
+                aux = auxPointer?.data
+
+                val previousPointer = auxPointer?.previous
+                val nextPointer  = auxPointer?.next
+
+                if (previousPointer != null)
+                    previousPointer.next = nextPointer
+                else
+                    head = head?.next
+
+                if (nextPointer != null)
+                    nextPointer.previous = previousPointer
+                else
+                    tail = tail?.previous
+                quantity--
+            } else {
+                throw IndexOutOfBoundsException("Invalid Index!")
+            }
+        } else {
+            throw NoSuchElementException("List is Empty!")
+        }
+        return aux
     }
 
     override fun clear(){

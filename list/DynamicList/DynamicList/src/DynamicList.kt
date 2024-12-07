@@ -28,7 +28,19 @@ class DynamicList(private var size: Int): Listable {
 
     // Implementing Main Methods
     override fun append(item: Any?){
-
+        if(!isFull()){
+            var noTemp = Node(item)
+            noTemp.previous = tail
+            if(!isEmpty()){
+                tail?.next = noTemp
+            } else {
+                head = noTemp
+            }
+            tail = noTemp
+            quantity++
+        } else {
+            throw NoSuchElementException("List is full!")
+        }
     }
 
     override fun insert(index: Int, item: Any?){

@@ -12,4 +12,5 @@ interface Listable {
     fun isEmpty(): Boolean
     fun isFull(): Boolean
     fun print(): String
+
 }

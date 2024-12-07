@@ -28,7 +28,19 @@ class DynamicQueue(private val size: Int): Queueable {
 
     // Implementing Main Methods
     override fun enqueue(item: Any?){
-
+        if(!isFull()){
+            var nodeTemp: Node? = null
+            nodeTemp?.previous = tail
+            if(!isEmpty())
+                tail?.next = nodeTemp
+            else {
+                head = nodeTemp
+            }
+            tail = nodeTemp
+            quantity++
+        } else {
+            throw NoSuchElementException("Queue is Full!")
+        }
     }
 
     override fun front(): Any?{

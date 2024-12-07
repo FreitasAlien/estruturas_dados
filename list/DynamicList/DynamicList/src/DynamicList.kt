@@ -62,6 +62,7 @@ class DynamicList(private var size: Int): Listable {
         } else {
             throw NoSuchElementException("List is empty!")
         }
+        return aux
     }
 
     override fun getAll(): Array<Any?>{
